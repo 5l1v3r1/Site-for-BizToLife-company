@@ -1,0 +1,61 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} - Инструменты
+{% endblock %}
+
+{% block content %}
+
+<section class="page-title bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>В бизнесе для жизни</h1>
+          <p>Инструменты мы находим в самой жизни.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="portfolio-work">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="portfolio-menu">
+            <ul>
+              <li class="filter" data-filter="all">Все</li>
+              {% for tag in tags %}
+              <li class="filter" data-filter=".{{ tag.slug }}">{{ tag.title }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="portfolio-contant">
+            <ul class="portfolio-contant-active text-center portfolio-popup">
+              {% for tools in page_object %}
+              <li class="mix {% for tag in tools.tag.all %} {{ tag.slug }} {% endfor %}">
+                <a href="{{ tools.get_absolute_url }}">
+                  <img src="{{ tools.picture_preview.url }}" alt="">
+                  <div class="item-overly">
+                    <div class="position-center">
+                      <h4>{{ tools.title }}</h4>
+                      <p>{{ tools.disc }}</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

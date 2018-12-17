@@ -1,0 +1,36 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} - {{ tool.title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="portfolio-single-page section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="project-details mt-50">
+          <h4>{{ tool.title }}</h4>
+          <ul>
+            <li><span><i class="icon-calendar3"></i>Дата создания:</span>{{ tool.date_pub }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="project-content mt-50">
+          {{ tool.body|safe }}
+        </div>
+      </div>
+      <div class="col-md-5">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

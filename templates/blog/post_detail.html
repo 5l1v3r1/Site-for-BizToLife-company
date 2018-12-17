@@ -1,0 +1,99 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} - {{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="page-title bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>Вы интересный собеседник</h1>
+          <p>Мы с удовольствием пообщаемся с Вами.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="post post-single">
+					<h2 class="post-title">{{ post.title }}</h2>
+					<div class="post-meta">
+			            <ul>
+			              <li>
+			                <i class="ion-calendar"></i> {{ post.date_pub }}
+			              </li>
+			              <li>
+			                <i class="ion-android-people"></i> POSTED BY ADMIN
+			              </li>
+			            </ul>
+		          	</div>
+					<div class="post-thumb">
+						<img class="img-responsive" src="{{ post.picture_preview.url }}" alt="">
+					</div>
+					<div class="post-content post-excerpt">
+						<p>
+              {{ post.body|safe }}
+            </p>
+				    </div>
+
+				    <div class="post-comments">
+				    	<h3 class="post-sub-heading">Комментарии: </h3>
+				    	<ul class="media-list comments-list m-bot-50 clearlist">
+
+                {% for comment in comments %}
+						    <li class="media">
+						        <img class="media-object comment-avatar" src="/static/images/blog/avatar-1.png" alt="" width="50" height="50">
+
+						        <div class="media-body">
+						            <div class="comment-info">
+						                <h4 class="comment-author">
+						                  {{ comment.name }}
+						                </h4>
+						                <time>{{ comment.date_pub }}</time>
+						            </div>
+
+						            <p>
+						              {{ comment.text }}
+						            </p>
+						        </div>
+						    </li>
+                {% endfor %}
+              </div>
+
+              <div class="post-comments-form">
+                <h3 class="post-sub-heading">Оставить свой комментарий: </h3>
+                <form method="post" id="form" role="form" >
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="name" id="name" class=" form-control" placeholder="Ваше имя" maxlength="100" required="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="text" id="text" class=" form-control" rows="6" placeholder="Ваш комментарий. Все комментарии перед публикацией проходят модерацию." maxlength="400"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn btn-main ">
+                                Отправить
+                            </button>
+                        </div>
+                      </div>
+                </form>
+              </div>
+
+        </div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

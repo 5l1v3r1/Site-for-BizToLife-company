@@ -1,0 +1,138 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<section class="page-title bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>Сколько вы будете зарабатывать</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pricing-table section bg-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 col-xs-12" >
+				<div class="pricing-item text-center">
+
+
+					<div class="price-title">
+						<h3>Старший менеджер</h3>
+						<strong class="value">25 000</strong>
+						<p>Данный результат возможен за 4 месяца активной работы</p>
+					</div>
+
+          <div class="pricing-item text-left">
+					<ul>
+						<li><i class="ion-ios-circle-outline"></i>Премия за кураторство 1000$</li>
+						<li><i class="ion-ios-circle-outline"></i>Банкет по итогам года</li>
+						<li><i class="ion-ios-circle-outline"></i>Премии по автопрограмме</li>
+						<li><i class="ion-ios-circle-outline"></i>Эксклюзивное обучение</li>
+					</ul>
+          </div>
+				</div>
+			</div>
+
+
+
+			<div class="col-md-4 col-sm-6 col-xs-12  "  >
+				<div class="pricing-item text-center">
+
+					<div class="price-title">
+						<h3>Руководитель 2 групп</h3>
+						<strong class="value">50 000</strong>
+						<p>Данный результат возможен за 1 год активной работы</p>
+					</div>
+
+          <div class="pricing-item text-left">
+					<ul>
+            <li><i class="ion-ios-circle-outline"></i>Включены все бонусы Старшего Менеджера</li>
+						<li><i class="ion-ios-circle-outline"></i>Премия за кураторство 3500$</li>
+						<li><i class="ion-ios-circle-outline"></i>Корпоративный выезд за границу 1 раз в год</li>
+					</ul>
+          </div>
+
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-12 ">
+				<div class="pricing-item text-center">
+
+					<div class="price-title">
+						<h3>Руководитель 6 групп</h3>
+						<strong class="value">150 000</strong>
+						<p>Данный результат возможен за 2 год активной работы</p>
+					</div>
+
+          <div class="pricing-item text-left">
+					<ul>
+						<li><i class="ion-ios-circle-outline"></i>Включены все бонусы руководителя 2 групп</li>
+						<li><i class="ion-ios-circle-outline"></i>Премия за кураторство 6000$</li>
+						<li><i class="ion-ios-circle-outline"></i>Автомобиль в лизинг</li>
+						<li><i class="ion-ios-circle-outline"></i>Корпоративные выезды за границу 2 раза в год</li>
+					</ul>
+          </div>
+
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+<section class="faq section-sm ">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center">Это FAQ. Обратитесь к <a href="{% url 'contact_url' %}">нам</a> что бы узнать подробности</h2>
+			</div>
+		</div>
+		<div class="row mt-30">
+			<div class="col-md-6">
+				<h4>Выплаты</h4>
+				<p>Премии выплачиваются в рублях по курсу доллара на момент выплаты.</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Доход</h4>
+				<p>Ежемесячный доход указан в рублях и перечисляется на Ваш расчетный счет.</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Корпоративные выезды</h4>
+				<p>Корпоративные выезды осуществляются и оплачиваются компанией-генеральным партнером, включая: визы, трансфер, проживание в лучших отелях, мероприятия и досуг.</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Эксклюзивное обучение</h4>
+				<p>Эксклюзивное обучние проходит в формате тренингов, вебинаров, конференций, с приглашением лучших российских и зарубежных тренеров(MBA, Р.Гондопас, И.Хакомада, Т.Роббинс, Т.Шрайтер и др.).</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Автомобиль в лизинг</h4>
+				<p>Автомобиль в лизинг предоставляется на Ваш выбор из пяти предложенных премиальных марок (Volvo, Lexus, BMW, Audi, VW).</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Премии по автопрограмме</h4>
+				<p>Премии по автопрограмме начисляются от 3 до 10 тысяч рублей ежемесячно, с возможностью приобретения автомобиля Skoda по льготной кредитной программе или на любые другие Ваши нужды.</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Банкет</h4>
+				<p>Банкет по итогам года проходит в Москве на лучших площадках города, таких как СК ОЛИМПИЙСКИЙ, Crocus City Hall, Гостинный Двор. Приглашение на 2 лица.</p>
+			</div>
+			<div class="col-md-6">
+				<h4>Бизнес без границ</h4>
+				<p>Ваш бизнес не ограничен территориально, и может развиваться на территории более 45 стран присутствия генерального партнера.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

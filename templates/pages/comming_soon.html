@@ -1,0 +1,42 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} - {{ data.title }}
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+   var year = "{{ data.time_to_start_event.year  }}";
+   var month = '{{ data.time_to_start_event.month }}';
+   var day = '{{ data.time_to_start_event.day }}';
+   var hour = '{{ data.time_to_start_event.hour }}';
+   var minute = '{{ data.time_to_start_event.minute }}';
+</script>
+
+<section class="coming-soon text-center overly">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="block">
+          <h1>{{ data.title }}</h1>
+          <p>{{ data.disc }}</p>
+                <div class="count-down"></div>
+                <div class="social-media-icons mt-20">
+                  <ul>
+                    <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                    <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                    <li><a href=""><i class="ion-social-linkedin"></i></a></li>
+                    <li><a href=""><i class="ion-social-octocat"></i></a></li>
+                    <li><a href=""><i class="ion-social-pinterest"></i></a></li>
+                    <li><a href=""><i class="ion-social-instagram"></i></a></li>
+
+                  </ul>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
